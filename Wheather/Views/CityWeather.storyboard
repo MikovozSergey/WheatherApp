@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--City Weather View Controller-->
+        <scene sceneID="jvT-qx-5N5">
+            <objects>
+                <viewController storyboardIdentifier="CityWeatherViewController" id="i4E-We-fhU" customClass="CityWeatherViewController" customModule="Wheather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DU3-pb-SlU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Температура составляет 23 градуса " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEa-Yb-blC">
+                                <rect key="frame" x="62" y="264" width="290.5" height="72"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ветер со скоростью 4 м/c" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSU-KW-qbX">
+                                <rect key="frame" x="98.5" y="388" width="217.5" height="27"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ff8-Ah-TMH"/>
+                        <color key="backgroundColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" secondItem="SEa-Yb-blC" secondAttribute="bottom" constant="52" id="3xO-Sb-32Q"/>
+                            <constraint firstItem="SEa-Yb-blC" firstAttribute="top" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="220" id="7Ai-8b-n5v"/>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="leading" constant="20" id="Npn-Dy-vPx"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SEa-Yb-blC" secondAttribute="trailing" constant="20" id="SGY-9v-C8B"/>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="X1P-Tv-IbK"/>
+                            <constraint firstItem="SEa-Yb-blC" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="fpv-wB-3CR"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="trailing" constant="20" id="lwZ-Cs-9mS"/>
+                            <constraint firstItem="SEa-Yb-blC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="leading" constant="20" id="xGY-Lp-nQd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CJS-1a-nnp"/>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="SEa-Yb-blC" id="GSn-B0-5UM"/>
+                        <outlet property="windLabel" destination="KSU-KW-qbX" id="Etq-ed-DJM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEg-U9-mWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3289" y="-7"/>
+        </scene>
+    </scenes>
+</document>
