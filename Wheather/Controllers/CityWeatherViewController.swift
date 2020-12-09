@@ -20,9 +20,11 @@ class CityWeatherViewController: UIViewController {
         self.model = model
     }
     
+    // MARK: Private methods
+    
     private func applyStyle() {
         guard let model = model else { return }
-        temperatureLabel.text = "Temperature in city is equal: \n\(model.main.temp) °C"
+        temperatureLabel.text = "Temperature in city is equal: \n\(round(10 * (model.main.temp - 273.15))/10) °C"
         windLabel.text = "Wind in city is equal: \n\(model.wind.speed) m/c"
         
         navigationItem.title = model.name

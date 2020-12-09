@@ -14,6 +14,7 @@
 		CE0946C52553C6E7001F0828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C42553C6E7001F0828 /* Assets.xcassets */; };
 		CE0946C82553C6E7001F0828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C62553C6E7001F0828 /* LaunchScreen.storyboard */; };
 		CE0946DC2553F0DA001F0828 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0946DB2553F0DA001F0828 /* WeatherModel.swift */; };
+		CE58AF02257F6C8900EF69A4 /* String + Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58AF01257F6C8900EF69A4 /* String + Extansion.swift */; };
 		CE9887E72556E30500201DB3 /* CityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9887E62556E30500201DB3 /* CityWeatherViewController.swift */; };
 		CE9887F12556F62100201DB3 /* CityWeather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9887F02556F62100201DB3 /* CityWeather.storyboard */; };
 		F52F5168B803691E3A409BFE /* Pods_Wheather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D06AFBEA869F9571CD85083 /* Pods_Wheather.framework */; };
@@ -31,6 +32,7 @@
 		CE0946C72553C6E7001F0828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0946C92553C6E7001F0828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0946DB2553F0DA001F0828 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		CE58AF01257F6C8900EF69A4 /* String + Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extansion.swift"; sourceTree = "<group>"; };
 		CE9887E62556E30500201DB3 /* CityWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherViewController.swift; sourceTree = "<group>"; };
 		CE9887F02556F62100201DB3 /* CityWeather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityWeather.storyboard; sourceTree = "<group>"; };
 		DF9A0E0F9114666099A30CDE /* Pods-Wheather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheather.debug.xcconfig"; path = "Target Support Files/Pods-Wheather/Pods-Wheather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0946BA2553C6E6001F0828 /* Wheather */,
+				CE58AEFF257F6C3900EF69A4 /* Extansions */,
 				CE0946B92553C6E6001F0828 /* Products */,
 				5AA75DA50AF312B13A662352 /* Pods */,
 				33F98EAD01F75250EE99B647 /* Frameworks */,
@@ -119,6 +122,14 @@
 				CE9887E62556E30500201DB3 /* CityWeatherViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE58AEFF257F6C3900EF69A4 /* Extansions */ = {
+			isa = PBXGroup;
+			children = (
+				CE58AF01257F6C8900EF69A4 /* String + Extansion.swift */,
+			);
+			path = Extansions;
 			sourceTree = "<group>";
 		};
 		CE9887EC2556F4E600201DB3 /* SupportedFiles */ = {
@@ -269,6 +280,7 @@
 				CE0946C02553C6E6001F0828 /* MainViewController.swift in Sources */,
 				CE0946BC2553C6E6001F0828 /* AppDelegate.swift in Sources */,
 				CE0946BE2553C6E6001F0828 /* SceneDelegate.swift in Sources */,
+				CE58AF02257F6C8900EF69A4 /* String + Extansion.swift in Sources */,
 				CE0946DC2553F0DA001F0828 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

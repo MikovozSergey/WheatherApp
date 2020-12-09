@@ -8,8 +8,10 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var showWeatherButton: UIButton!
+    @IBOutlet weak var annotationLabel: UILabel!
     
-    // MARK: private functions
+    
+    // MARK: Private methods
     
     private func showCityTemperature(with model: City) {
         let storyboard = UIStoryboard(name: "CityWeather", bundle: nil)
@@ -19,15 +21,30 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @objc private func isSelectedTextField() {
+        guard let cityName = cityTextField.text else { return }
+        if cityName == "" {
+            cityTextField.title = "your city"
+            cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
+        }
+    }
+    
     @objc private func tapShowWeatherButton() {
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
             showAlert(with: "Please enter city name")
             return
         }
-        let url = getURL(with: cityName)
-        cityRequest(urlString: url) { [weak self] in
-            guard let self = self, let model = $0 else { return }
-            self.showCityTemperature(with: model)
+        if isValidCity(city: cityName) {
+            cityTextField.title = "your city"
+            cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
+            let url = getURL(with: cityName)
+            cityRequest(urlString: url) { [weak self] in
+                guard let self = self, let model = $0 else { return }
+                self.showCityTemperature(with: model)
+            }
+        } else {
+            cityTextField.title = "wrong city"
+            cityTextField.selectedTitleColor = .red
         }
     }
     
@@ -35,7 +52,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        applyStyles()
+        setupUI()
     }
     
     // MARK: API
@@ -53,8 +70,8 @@ class MainViewController: UIViewController {
                     self.showAlert(with: "Sorry, weather in this city is not available")
                     completion(nil)
                 }
-            case let .failure(error):
-                self.showAlert(with: "404 erorr = \(error)")
+            case .failure:
+                self.showAlert(with: "Something whent wrong, please try again later")
                 completion(nil)
             }
         }
@@ -62,7 +79,7 @@ class MainViewController: UIViewController {
     
 }
 
-// MARK: Extensions
+    // MARK: Extensions
 
 private extension MainViewController {
     
@@ -74,20 +91,21 @@ private extension MainViewController {
         present(alert, animated: true)
     }
     
-    func applyStyles() {
+    func setupUI() {
         navigationItem.title = "Weather in City"
         
-        [cityTextField].forEach { // Если у нас используется набор одинаковых элементов
-            $0?.textColor = .black
-            $0?.textAlignment = .center
-            $0?.lineColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
-            $0?.selectedLineColor = .black
-            $0?.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
-            $0?.placeholder = "Enter a city"
-            $0?.placeholderColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
-            $0?.title = "Your city"
-        }
+        annotationLabel.text = "The city name must be written in English and contain from 2 to 18 characters. The city should not contain spaces, numbers."
         
+        cityTextField.textColor = .black
+        cityTextField.textAlignment = .center
+        cityTextField.lineColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
+        cityTextField.title = "Your city"
+        cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
+        cityTextField.placeholder = "Enter a city"
+        cityTextField.placeholderColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
+        
+        cityTextField.addTarget(self, action: #selector(isSelectedTextField), for: .editingChanged)
+
         showWeatherButton.setTitle("Show weather", for: .normal)
         showWeatherButton.addTarget(self, action: #selector(tapShowWeatherButton), for: .touchDown)
         cityTextField.delegate = self
