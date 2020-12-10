@@ -6,9 +6,9 @@ class MainViewController: UIViewController {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var cityTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var showWeatherButton: UIButton!
-    @IBOutlet weak var annotationLabel: UILabel!
+    @IBOutlet private weak var cityTextField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var showWeatherButton: UIButton!
+    @IBOutlet private weak var annotationLabel: UILabel!
     
     // MARK: - LifeCycle
     
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
     
     // MARK: - API Calls
     
-    func cityRequest(urlString: String, completion: @escaping (City?) -> Void) {
+   private func cityRequest(urlString: String, completion: @escaping (City?) -> Void) {
         
         AF.request(urlString).responseData { response in
             switch response.result {
