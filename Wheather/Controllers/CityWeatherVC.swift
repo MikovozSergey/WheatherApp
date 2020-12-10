@@ -2,26 +2,26 @@ import UIKit
 
 class CityWeatherViewController: UIViewController {
     
-    // MARK: IBOutlets
-    
+    // MARK: - IBOutlets
+
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var weatherImage: UIImageView!
     
     private var model: City?
     
-    // MARK: LifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         applyStyle()
     }
+
+    // MARK: - Logic
     
     func configure(with model: City) {
         self.model = model
     }
-    
-    // MARK: Private methods
     
     private func applyStyle() {
         guard let model = model else { return }

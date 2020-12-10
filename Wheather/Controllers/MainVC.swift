@@ -4,14 +4,20 @@ import SkyFloatingLabelTextField
 
 class MainViewController: UIViewController {
     
-    // MARK: IBOutlets and IBActions
+    // MARK: - IBOutlets
     
     @IBOutlet weak var cityTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var showWeatherButton: UIButton!
     @IBOutlet weak var annotationLabel: UILabel!
     
+    // MARK: - LifeCycle
     
-    // MARK: Private methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
+    // MARK: - Logic
     
     private func showCityTemperature(with model: City) {
         let storyboard = UIStoryboard(name: "CityWeather", bundle: nil)
@@ -48,14 +54,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    // MARK: LifeCycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-    
-    // MARK: API
+    // MARK: - API Calls
     
     func cityRequest(urlString: String, completion: @escaping (City?) -> Void) {
         
@@ -79,7 +78,7 @@ class MainViewController: UIViewController {
     
 }
 
-    // MARK: Extensions
+    // MARK: - Extensions
 
 private extension MainViewController {
     
@@ -90,6 +89,8 @@ private extension MainViewController {
         
         present(alert, animated: true)
     }
+    
+    // MARK: - Setup
     
     func setupUI() {
         navigationItem.title = "Weather in City"
@@ -111,12 +112,14 @@ private extension MainViewController {
         cityTextField.delegate = self
     }
     
+    // MARK: - Api Calls
     
     func getURL(with cityName: String) -> String {
         return "http://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=302b5b3153622f3d6f42aa61de61076a"
     }
 }
 
+    // MARK: - UITextFieldDelegate
 
 extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
