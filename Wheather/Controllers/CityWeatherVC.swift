@@ -4,7 +4,8 @@ class CityWeatherViewController: UIViewController {
     
     // MARK: - IBOutlets
 
-    @IBOutlet private weak var temperatureLabel: UILabel!
+
+    @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet private weak var windLabel: UILabel!
     @IBOutlet private weak var weatherImage: UIImageView!
     
@@ -35,7 +36,7 @@ class CityWeatherViewController: UIViewController {
             weatherImage.image = UIImage(named: "img-Sun.png")
         }
         
-        temperatureLabel.text = "Temperature in city is equal: \n\(temperatureInCelsies) °C"
+        temperatureLabel.text = "\(temperatureInCelsies)"
         windLabel.text = "Wind in city is equal: \n\(speedOfWind) m/c"
         
         navigationItem.title = model.name

@@ -16,18 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Температура составляет 23 градуса " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEa-Yb-blC">
-                                <rect key="frame" x="62" y="412" width="290.5" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="FUJ-Be-dfI"/>
-                                    <constraint firstAttribute="width" constant="290.5" id="xcv-nT-pZz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ветер со скоростью 4 м/c" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSU-KW-qbX">
-                                <rect key="frame" x="98.5" y="533" width="217.5" height="27"/>
+                                <rect key="frame" x="98.5" y="532" width="217.5" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="217.5" id="xED-IZ-v9N"/>
                                 </constraints>
@@ -42,29 +32,55 @@
                                     <constraint firstAttribute="width" constant="200" id="GCh-JR-FUh"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y8E-1X-3Gb">
+                                <rect key="frame" x="131" y="390" width="152.5" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUV-ih-4MQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="60"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-u2-Hy6">
+                                        <rect key="frame" x="130" y="0.0" width="22.5" height="60"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="°C">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="20"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="2" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="IeQ-Eb-rcG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ff8-Ah-TMH"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SEa-Yb-blC" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="2bv-rf-XAf"/>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" secondItem="y8E-1X-3Gb" secondAttribute="bottom" constant="82" id="2vk-lo-hJL"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="bottom" constant="303" id="B5y-Hm-3bH"/>
                             <constraint firstItem="KSU-KW-qbX" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="CaD-Of-PpK"/>
                             <constraint firstItem="MVq-0E-kx8" firstAttribute="top" relation="lessThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="78" id="JvL-lo-YDV"/>
                             <constraint firstItem="MVq-0E-kx8" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="PCm-yr-IIv"/>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" secondItem="SEa-Yb-blC" secondAttribute="bottom" constant="49" id="aeM-aV-npq"/>
-                            <constraint firstItem="SEa-Yb-blC" firstAttribute="top" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="90" id="fpc-oy-VbW"/>
-                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="bottom" constant="302" id="hSb-4H-Ixr"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="top" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="68" id="pbF-sx-xyW"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="rM6-tL-Thi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CJS-1a-nnp"/>
                     <connections>
-                        <outlet property="temperatureLabel" destination="SEa-Yb-blC" id="GSn-B0-5UM"/>
+                        <outlet property="temperatureLabel" destination="HUV-ih-4MQ" id="fXS-PA-w6m"/>
                         <outlet property="weatherImage" destination="MVq-0E-kx8" id="6TQ-lr-AOj"/>
                         <outlet property="windLabel" destination="KSU-KW-qbX" id="Etq-ed-DJM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEg-U9-mWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3289" y="-7"/>
+            <point key="canvasLocation" x="-3289.8550724637685" y="-7.3660714285714279"/>
         </scene>
     </scenes>
 </document>
