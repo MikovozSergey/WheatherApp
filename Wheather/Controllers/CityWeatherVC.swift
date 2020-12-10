@@ -30,9 +30,9 @@ class CityWeatherViewController: UIViewController {
         let speedOfWind = model.wind.speed
         
         if temperatureInCelsies < 0 {
-            weatherImage.image = UIImage(named: "Cold.png")
+            weatherImage.image = UIImage(named: "img-Cold.png")
         } else {
-            weatherImage.image = UIImage(named: "Sun.png")
+            weatherImage.image = UIImage(named: "img-Sun.png")
         }
         
         temperatureLabel.text = "Temperature in city is equal: \n\(temperatureInCelsies) °C"
