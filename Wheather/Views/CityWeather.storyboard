@@ -17,34 +17,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Температура составляет 23 градуса " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEa-Yb-blC">
-                                <rect key="frame" x="62" y="264" width="290.5" height="72"/>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="24"/>
+                                <rect key="frame" x="62" y="412" width="290.5" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="FUJ-Be-dfI"/>
+                                    <constraint firstAttribute="width" constant="290.5" id="xcv-nT-pZz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ветер со скоростью 4 м/c" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSU-KW-qbX">
-                                <rect key="frame" x="98.5" y="388" width="217.5" height="27"/>
+                                <rect key="frame" x="98.5" y="533" width="217.5" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="217.5" id="xED-IZ-v9N"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-0E-kx8">
+                                <rect key="frame" x="107" y="122" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5Qa-Ev-Gbb"/>
+                                    <constraint firstAttribute="width" constant="200" id="GCh-JR-FUh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ff8-Ah-TMH"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" secondItem="SEa-Yb-blC" secondAttribute="bottom" constant="52" id="3xO-Sb-32Q"/>
-                            <constraint firstItem="SEa-Yb-blC" firstAttribute="top" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="220" id="7Ai-8b-n5v"/>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="leading" constant="20" id="Npn-Dy-vPx"/>
-                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SEa-Yb-blC" secondAttribute="trailing" constant="20" id="SGY-9v-C8B"/>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="X1P-Tv-IbK"/>
-                            <constraint firstItem="SEa-Yb-blC" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="fpv-wB-3CR"/>
-                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="trailing" constant="20" id="lwZ-Cs-9mS"/>
-                            <constraint firstItem="SEa-Yb-blC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="leading" constant="20" id="xGY-Lp-nQd"/>
+                            <constraint firstItem="SEa-Yb-blC" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="2bv-rf-XAf"/>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="CaD-Of-PpK"/>
+                            <constraint firstItem="MVq-0E-kx8" firstAttribute="top" relation="lessThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="78" id="JvL-lo-YDV"/>
+                            <constraint firstItem="MVq-0E-kx8" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="PCm-yr-IIv"/>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" secondItem="SEa-Yb-blC" secondAttribute="bottom" constant="49" id="aeM-aV-npq"/>
+                            <constraint firstItem="SEa-Yb-blC" firstAttribute="top" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="90" id="fpc-oy-VbW"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="bottom" constant="302" id="hSb-4H-Ixr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CJS-1a-nnp"/>
                     <connections>
                         <outlet property="temperatureLabel" destination="SEa-Yb-blC" id="GSn-B0-5UM"/>
+                        <outlet property="weatherImage" destination="MVq-0E-kx8" id="6TQ-lr-AOj"/>
                         <outlet property="windLabel" destination="KSU-KW-qbX" id="Etq-ed-DJM"/>
                     </connections>
                 </viewController>

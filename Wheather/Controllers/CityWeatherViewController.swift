@@ -6,6 +6,7 @@ class CityWeatherViewController: UIViewController {
     
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
     
     private var model: City?
     
@@ -24,8 +25,18 @@ class CityWeatherViewController: UIViewController {
     
     private func applyStyle() {
         guard let model = model else { return }
-        temperatureLabel.text = "Temperature in city is equal: \n\(round(10 * (model.main.temp - 273.15))/10) °C"
-        windLabel.text = "Wind in city is equal: \n\(model.wind.speed) m/c"
+        
+        let temperatureInCelsies = round(10 * (model.main.temp - 273.15))/10
+        let speedOfWind = model.wind.speed
+        
+        if temperatureInCelsies < 0 {
+            weatherImage.image = UIImage(named: "Cold.png")
+        } else {
+            weatherImage.image = UIImage(named: "Sun.png")
+        }
+        
+        temperatureLabel.text = "Temperature in city is equal: \n\(temperatureInCelsies) °C"
+        windLabel.text = "Wind in city is equal: \n\(speedOfWind) m/c"
         
         navigationItem.title = model.name
     }
