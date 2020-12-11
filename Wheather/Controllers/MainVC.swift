@@ -52,6 +52,7 @@ class MainViewController: UIViewController {
             cityTextField.title = "wrong city"
             cityTextField.selectedTitleColor = .red
         }
+        cityTextField.text = ""
     }
     
     // MARK: - API Calls
@@ -93,7 +94,7 @@ private extension MainViewController {
     // MARK: - Setup
     
     func setupUI() {
-        navigationItem.title = "Weather in City"
+        navigationItem.title = "WEATHER IN CITY"
         
         annotationLabel.text = "The city name must be written in English and contain from 2 to 18 characters. The city should not contain spaces, numbers."
         
@@ -104,10 +105,9 @@ private extension MainViewController {
         cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
         cityTextField.placeholder = "Enter a city"
         cityTextField.placeholderColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
-        
         cityTextField.addTarget(self, action: #selector(isSelectedTextField), for: .editingChanged)
 
-        showWeatherButton.setTitle("Show weather", for: .normal)
+        showWeatherButton.setTitle("SHOW WEATHER", for: .normal)
         showWeatherButton.addTarget(self, action: #selector(tapShowWeatherButton), for: .touchDown)
         cityTextField.delegate = self
     }
