@@ -4,11 +4,10 @@ class CityWeatherViewController: UIViewController {
     
     // MARK: - IBOutlets
 
-
-    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet private weak var temperatureLabel: UILabel!
     @IBOutlet private weak var windLabel: UILabel!
     @IBOutlet private weak var weatherImage: UIImageView!
-    @IBOutlet weak var temperatureIcon: UIImageView!
+    @IBOutlet private weak var temperatureIcon: UIImageView!
     
     private var model: City?
     
