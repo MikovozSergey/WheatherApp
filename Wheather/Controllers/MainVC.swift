@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupTargets()
     }
     
     // MARK: - Logic
@@ -55,9 +55,29 @@ class MainViewController: UIViewController {
         cityTextField.text = ""
     }
     
+    private func showAlert(with message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let doneButton = UIAlertAction(title: "done", style: .default, handler: nil)
+        alert.addAction(doneButton)
+        
+        present(alert, animated: true)
+    }
+    
+    // MARK: - Setup
+    
+    private func setupTargets() {
+        cityTextField.addTarget(self, action: #selector(isSelectedTextField), for: .editingChanged)
+        showWeatherButton.addTarget(self, action: #selector(tapShowWeatherButton), for: .touchDown)
+        cityTextField.delegate = self
+    }
+    
     // MARK: - API Calls
     
-   private func cityRequest(urlString: String, completion: @escaping (City?) -> Void) {
+    private func getURL(with cityName: String) -> String {
+        return "http://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=302b5b3153622f3d6f42aa61de61076a"
+    }
+    
+    private func cityRequest(urlString: String, completion: @escaping (City?) -> Void) {
         
         AF.request(urlString).responseData { response in
             switch response.result {
@@ -71,52 +91,12 @@ class MainViewController: UIViewController {
                     completion(nil)
                 }
             case .failure:
-                self.showAlert(with: "Something whent wrong, please try again later")
+                self.showAlert(with: "Something went wrong, please try again later")
                 completion(nil)
             }
         }
     }
     
-}
-
-    // MARK: - Extensions
-
-private extension MainViewController {
-    
-    func showAlert(with message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "done", style: .default, handler: nil)
-        alert.addAction(doneButton)
-        
-        present(alert, animated: true)
-    }
-    
-    // MARK: - Setup
-    
-    func setupUI() {
-        navigationItem.title = "WEATHER IN CITY"
-        
-        annotationLabel.text = "The city name must be written in English and contain from 2 to 18 characters. The city should not contain spaces, numbers."
-        
-        cityTextField.textColor = .black
-        cityTextField.textAlignment = .center
-        cityTextField.lineColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
-        cityTextField.title = "Your city"
-        cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
-        cityTextField.placeholder = "Enter a city"
-        cityTextField.placeholderColor = UIColor(red: 116/255, green: 139/255, blue: 174/255, alpha: 1.0)
-        cityTextField.addTarget(self, action: #selector(isSelectedTextField), for: .editingChanged)
-
-        showWeatherButton.setTitle("SHOW WEATHER", for: .normal)
-        showWeatherButton.addTarget(self, action: #selector(tapShowWeatherButton), for: .touchDown)
-        cityTextField.delegate = self
-    }
-    
-    // MARK: - Api Calls
-    
-    func getURL(with cityName: String) -> String {
-        return "http://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=302b5b3153622f3d6f42aa61de61076a"
-    }
 }
 
     // MARK: - UITextFieldDelegate

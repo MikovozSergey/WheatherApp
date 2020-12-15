@@ -19,6 +19,7 @@ disabled_rules:
 excluded:
 - Pods
 - Weather/Application/AppDelegate.swift
+- Weather/Application/SceneDelegate.swift
 custom_rules:
     open_iboutlets:
         included: ".*.swift"
