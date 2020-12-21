@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-0E-kx8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-Sun" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-0E-kx8">
                                 <rect key="frame" x="107" y="122" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="5Qa-Ev-Gbb"/>
@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="60" id="IeQ-Eb-rcG"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-2W-iRl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-temperaturePlus" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-2W-iRl">
                                 <rect key="frame" x="60" y="390" width="50" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="8xq-1c-6W9"/>
@@ -93,4 +93,8 @@
             <point key="canvasLocation" x="-3530" y="-35"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic-temperaturePlus" width="100" height="100"/>
+        <image name="img-Sun" width="100" height="100"/>
+    </resources>
 </document>
