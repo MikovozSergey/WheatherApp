@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		CE0946BC2553C6E6001F0828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0946BB2553C6E6001F0828 /* AppDelegate.swift */; };
 		CE0946BE2553C6E6001F0828 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0946BD2553C6E6001F0828 /* SceneDelegate.swift */; };
-		CE0946C02553C6E6001F0828 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0946BF2553C6E6001F0828 /* MainVC.swift */; };
 		CE0946C32553C6E6001F0828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C12553C6E6001F0828 /* Main.storyboard */; };
 		CE0946C52553C6E7001F0828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C42553C6E7001F0828 /* Assets.xcassets */; };
 		CE0946C82553C6E7001F0828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C62553C6E7001F0828 /* LaunchScreen.storyboard */; };
 		CE0946DC2553F0DA001F0828 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0946DB2553F0DA001F0828 /* WeatherModel.swift */; };
+		CE4C2417258B619E0067C772 /* CityWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C2416258B619E0067C772 /* CityWeatherVC.swift */; };
+		CE4C2420258B62140067C772 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C241F258B62140067C772 /* MainVC.swift */; };
 		CE58AF02257F6C8900EF69A4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */; };
-		CE9887E72556E30500201DB3 /* CityWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9887E62556E30500201DB3 /* CityWeatherVC.swift */; };
 		CE9887F12556F62100201DB3 /* CityWeather.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9887F02556F62100201DB3 /* CityWeather.storyboard */; };
 		F52F5168B803691E3A409BFE /* Pods_Wheather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D06AFBEA869F9571CD85083 /* Pods_Wheather.framework */; };
 /* End PBXBuildFile section */
@@ -26,14 +26,14 @@
 		CE0946B82553C6E6001F0828 /* Wheather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wheather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0946BB2553C6E6001F0828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0946BD2553C6E6001F0828 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE0946BF2553C6E6001F0828 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CE0946C22553C6E6001F0828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE0946C42553C6E7001F0828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE0946C72553C6E7001F0828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0946C92553C6E7001F0828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0946DB2553F0DA001F0828 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		CE4C2416258B619E0067C772 /* CityWeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityWeatherVC.swift; path = Wheather/Modules/CityWeatherScreen/CityWeatherVC.swift; sourceTree = SOURCE_ROOT; };
+		CE4C241F258B62140067C772 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		CE9887E62556E30500201DB3 /* CityWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherVC.swift; sourceTree = "<group>"; };
 		CE9887F02556F62100201DB3 /* CityWeather.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityWeather.storyboard; sourceTree = "<group>"; };
 		DF9A0E0F9114666099A30CDE /* Pods-Wheather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheather.debug.xcconfig"; path = "Target Support Files/Pods-Wheather/Pods-Wheather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0946BA2553C6E6001F0828 /* Wheather */,
-				CE58AEFF257F6C3900EF69A4 /* Utils */,
 				CE0946B92553C6E6001F0828 /* Products */,
 				5AA75DA50AF312B13A662352 /* Pods */,
 				33F98EAD01F75250EE99B647 /* Frameworks */,
@@ -90,9 +89,11 @@
 			isa = PBXGroup;
 			children = (
 				CE4170392581FCC600B8E7A0 /* Application */,
-				CE0946E02553F107001F0828 /* Controllers */,
 				CE0946DE2553F0EE001F0828 /* Models */,
+				CE4C2428258B625D0067C772 /* Modules */,
+				CE4C2427258B624F0067C772 /* Resources */,
 				CE9887EC2556F4E600201DB3 /* SupportedFiles */,
+				CE58AEFF257F6C3900EF69A4 /* Utils */,
 				CE0946DF2553F0FF001F0828 /* Views */,
 			);
 			path = Wheather;
@@ -109,20 +110,9 @@
 		CE0946DF2553F0FF001F0828 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE0946C12553C6E6001F0828 /* Main.storyboard */,
 				CE0946C62553C6E7001F0828 /* LaunchScreen.storyboard */,
-				CE9887F02556F62100201DB3 /* CityWeather.storyboard */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		CE0946E02553F107001F0828 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				CE9887E62556E30500201DB3 /* CityWeatherVC.swift */,
-				CE0946BF2553C6E6001F0828 /* MainVC.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CE4170392581FCC600B8E7A0 /* Application */ = {
@@ -132,6 +122,41 @@
 				CE0946BD2553C6E6001F0828 /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		CE4C2427258B624F0067C772 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE0946C42553C6E7001F0828 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE4C2428258B625D0067C772 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C242A258B626B0067C772 /* CityWeatherScreen */,
+				CE4C2429258B62650067C772 /* MainScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CE4C2429258B62650067C772 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C241F258B62140067C772 /* MainVC.swift */,
+				CE0946C12553C6E6001F0828 /* Main.storyboard */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		CE4C242A258B626B0067C772 /* CityWeatherScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C2416258B619E0067C772 /* CityWeatherVC.swift */,
+				CE9887F02556F62100201DB3 /* CityWeather.storyboard */,
+			);
+			path = CityWeatherScreen;
 			sourceTree = "<group>";
 		};
 		CE58AEFF257F6C3900EF69A4 /* Utils */ = {
@@ -145,7 +170,6 @@
 		CE9887EC2556F4E600201DB3 /* SupportedFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CE0946C42553C6E7001F0828 /* Assets.xcassets */,
 				CE0946C92553C6E7001F0828 /* Info.plist */,
 			);
 			path = SupportedFiles;
@@ -284,8 +308,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9887E72556E30500201DB3 /* CityWeatherVC.swift in Sources */,
-				CE0946C02553C6E6001F0828 /* MainVC.swift in Sources */,
+				CE4C2417258B619E0067C772 /* CityWeatherVC.swift in Sources */,
+				CE4C2420258B62140067C772 /* MainVC.swift in Sources */,
 				CE0946BC2553C6E6001F0828 /* AppDelegate.swift in Sources */,
 				CE0946BE2553C6E6001F0828 /* SceneDelegate.swift in Sources */,
 				CE58AF02257F6C8900EF69A4 /* StringExtensions.swift in Sources */,
