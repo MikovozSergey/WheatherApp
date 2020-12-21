@@ -28,21 +28,18 @@ class MainViewController: UIViewController {
     }
     
     @objc private func isSelectedTextField() {
-        guard let cityName = cityTextField.text else { return }
-        if cityName == "" {
-            cityTextField.title = "your city"
-            cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
-        }
+        cityTextField.title = "your city"
+        cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
     }
     
     @objc private func tapShowWeatherButton() {
+        cityTextField.title = "your city"
+        cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
             showAlert(with: "Please enter city name")
             return
         }
         if isValidCity(city: cityName) {
-            cityTextField.title = "your city"
-            cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
             let url = getURL(with: cityName)
             cityRequest(urlString: url) { [weak self] in
                 guard let self = self, let model = $0 else { return }
@@ -52,9 +49,8 @@ class MainViewController: UIViewController {
             cityTextField.title = "wrong city"
             cityTextField.selectedTitleColor = .red
         }
-        cityTextField.text = ""
     }
-    
+
     private func showAlert(with message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let doneButton = UIAlertAction(title: "done", style: .default, handler: nil)
@@ -68,6 +64,9 @@ class MainViewController: UIViewController {
     private func setupTargets() {
         cityTextField.addTarget(self, action: #selector(isSelectedTextField), for: .editingChanged)
         showWeatherButton.addTarget(self, action: #selector(tapShowWeatherButton), for: .touchDown)
+        
+        cityTextField.textAlignment = .center
+        
         cityTextField.delegate = self
     }
     

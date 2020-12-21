@@ -33,9 +33,6 @@ class CityWeatherViewController: UIViewController {
         if temperatureInCelsies < 0 {
             weatherImage.image = UIImage(named: "img-Cold.png")
             temperatureIcon.image = UIImage(named: "ic-temperatureMinus")
-        } else {
-            weatherImage.image = UIImage(named: "img-Sun.png")
-            temperatureIcon.image = UIImage(named: "ic-temperaturePlus")
         }
         
         temperatureLabel.text = "\(temperatureInCelsies)"
