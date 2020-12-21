@@ -24,6 +24,8 @@ class CityWeatherViewController: UIViewController {
         self.model = model
     }
     
+    // MARK: - Setup
+    
     private func applyStyle() {
         guard let model = model else { return }
         
