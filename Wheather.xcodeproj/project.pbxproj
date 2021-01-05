@@ -14,6 +14,8 @@
 		CE0946C52553C6E7001F0828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C42553C6E7001F0828 /* Assets.xcassets */; };
 		CE0946C82553C6E7001F0828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0946C62553C6E7001F0828 /* LaunchScreen.storyboard */; };
 		CE0946DC2553F0DA001F0828 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0946DB2553F0DA001F0828 /* WeatherModel.swift */; };
+		CE3F4F0C25A484B6003D0037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F4F0B25A484B6003D0037 /* Constants.swift */; };
+		CE3F4F1025A48698003D0037 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F4F0F25A48698003D0037 /* NetworkService.swift */; };
 		CE4C2417258B619E0067C772 /* CityWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C2416258B619E0067C772 /* CityWeatherVC.swift */; };
 		CE4C2420258B62140067C772 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C241F258B62140067C772 /* MainVC.swift */; };
 		CE58AF02257F6C8900EF69A4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */; };
@@ -31,6 +33,8 @@
 		CE0946C72553C6E7001F0828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0946C92553C6E7001F0828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0946DB2553F0DA001F0828 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		CE3F4F0B25A484B6003D0037 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE3F4F0F25A48698003D0037 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE4C2416258B619E0067C772 /* CityWeatherVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityWeatherVC.swift; path = Wheather/Modules/CityWeatherScreen/CityWeatherVC.swift; sourceTree = SOURCE_ROOT; };
 		CE4C241F258B62140067C772 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				CE4170392581FCC600B8E7A0 /* Application */,
 				CE0946DE2553F0EE001F0828 /* Models */,
 				CE4C2428258B625D0067C772 /* Modules */,
+				CE3F4F0E25A4863C003D0037 /* Network */,
 				CE4C2427258B624F0067C772 /* Resources */,
 				CE58AEFF257F6C3900EF69A4 /* Utils */,
 				CE0946DF2553F0FF001F0828 /* Views */,
@@ -111,6 +116,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE3F4F0E25A4863C003D0037 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE3F4F0F25A48698003D0037 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		CE4170392581FCC600B8E7A0 /* Application */ = {
@@ -162,6 +175,7 @@
 		CE58AEFF257F6C3900EF69A4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE3F4F0B25A484B6003D0037 /* Constants.swift */,
 				CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */,
 			);
 			path = Utils;
@@ -302,8 +316,10 @@
 			files = (
 				CE4C2417258B619E0067C772 /* CityWeatherVC.swift in Sources */,
 				CE4C2420258B62140067C772 /* MainVC.swift in Sources */,
+				CE3F4F1025A48698003D0037 /* NetworkService.swift in Sources */,
 				CE0946BC2553C6E6001F0828 /* AppDelegate.swift in Sources */,
 				CE0946BE2553C6E6001F0828 /* SceneDelegate.swift in Sources */,
+				CE3F4F0C25A484B6003D0037 /* Constants.swift in Sources */,
 				CE58AF02257F6C8900EF69A4 /* StringExtensions.swift in Sources */,
 				CE0946DC2553F0DA001F0828 /* WeatherModel.swift in Sources */,
 			);

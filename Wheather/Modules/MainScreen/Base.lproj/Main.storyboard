@@ -33,6 +33,10 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapCityTextField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yN0-PS-Sbv"/>
+                                    <action selector="tapShowWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQk-VY-BhP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-R8-BSX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <rect key="frame" x="50" y="325.33333333333331" width="275" height="39.333333333333314"/>
