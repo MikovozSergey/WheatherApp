@@ -118,6 +118,7 @@
 		CE4170392581FCC600B8E7A0 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				CE0946C92553C6E7001F0828 /* Info.plist */,
 				CE0946BB2553C6E6001F0828 /* AppDelegate.swift */,
 				CE0946BD2553C6E6001F0828 /* SceneDelegate.swift */,
 			);
@@ -170,7 +171,6 @@
 		CE9887EC2556F4E600201DB3 /* SupportedFiles */ = {
 			isa = PBXGroup;
 			children = (
-				CE0946C92553C6E7001F0828 /* Info.plist */,
 			);
 			path = SupportedFiles;
 			sourceTree = "<group>";
@@ -463,7 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4XTZSDF67;
-				INFOPLIST_FILE = Wheather/SupportedFiles/Info.plist;
+				INFOPLIST_FILE = Wheather/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,7 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4XTZSDF67;
-				INFOPLIST_FILE = Wheather/SupportedFiles/Info.plist;
+				INFOPLIST_FILE = Wheather/Application/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
