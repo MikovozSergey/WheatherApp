@@ -7,7 +7,7 @@ class NetworkService {
         return "\(url)" + cityName + "\(appId)"
     }
     
-    static func cityRequest(controller: MainViewController ,urlString: String, completion: @escaping (City?) -> Void) {
+    static func getWeatherInCity(controller: MainViewController ,urlString: String, completion: @escaping (City?) -> Void) {
         
         AF.request(urlString).responseData { response in
             switch response.result {

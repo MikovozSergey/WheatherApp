@@ -13,19 +13,25 @@ class MainViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction private func tapCityTextField(_ sender: Any) {
-        cityTextField.title = "your city"
-        cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
+
+        if cityTextField.text?.isEmpty != nil {
+            cityTextField.placeholder = ""
+            cityTextField.title = StyleConstants.titleText
+            cityTextField.selectedTitleColor = StyleConstants.selectedTitleColor
+        }
+    
     }
+    
     @IBAction private func tapShowWeatherButton(_ sender: Any) {
-        cityTextField.title = "your city"
-        cityTextField.selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
+        cityTextField.title = StyleConstants.titleText
+        cityTextField.selectedTitleColor = StyleConstants.selectedTitleColor
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
             showAlert(with: "Please enter city name")
             return
         }
         if isValidCity(city: cityName) {
             let url = NetworkService.getURL(url: RequestConstants.url, cityName: cityName, appId: RequestConstants.appId)
-            NetworkService.cityRequest(controller: self, urlString: url) { [weak self] in
+            NetworkService.getWeatherInCity(controller: self, urlString: url) { [weak self] in
                 guard let self = self, let model = $0 else { return }
                 self.showCityTemperature(with: model)
             }
