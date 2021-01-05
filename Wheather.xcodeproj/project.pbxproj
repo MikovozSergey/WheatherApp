@@ -92,7 +92,6 @@
 				CE0946DE2553F0EE001F0828 /* Models */,
 				CE4C2428258B625D0067C772 /* Modules */,
 				CE4C2427258B624F0067C772 /* Resources */,
-				CE9887EC2556F4E600201DB3 /* SupportedFiles */,
 				CE58AEFF257F6C3900EF69A4 /* Utils */,
 				CE0946DF2553F0FF001F0828 /* Views */,
 			);
@@ -110,7 +109,6 @@
 		CE0946DF2553F0FF001F0828 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE0946C62553C6E7001F0828 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4C242A258B626B0067C772 /* CityWeatherScreen */,
+				CE0946C62553C6E7001F0828 /* LaunchScreen.storyboard */,
 				CE4C2429258B62650067C772 /* MainScreen */,
 			);
 			path = Modules;
@@ -166,13 +165,6 @@
 				CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		CE9887EC2556F4E600201DB3 /* SupportedFiles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SupportedFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
