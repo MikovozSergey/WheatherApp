@@ -33,8 +33,11 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapShowWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQk-VY-BhP"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-R8-BSX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-R8-BSX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                 <rect key="frame" x="50" y="325.33333333333331" width="275" height="39.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
@@ -51,7 +54,11 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                         <color key="value" red="0.45490196078431372" green="0.54509803921568623" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your city"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapCityTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="NlA-lQ-kg1"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-D1-eol">
                                 <rect key="frame" x="62.666666666666657" y="60" width="249.99999999999997" height="160"/>
@@ -85,7 +92,7 @@
                     <navigationItem key="navigationItem" title="WEATHER IN CITY" id="7Fj-Sx-ekg"/>
                     <connections>
                         <outlet property="annotationLabel" destination="G35-D1-eol" id="isT-7J-Xsc"/>
-                        <outlet property="cityTextField" destination="Edt-R8-BSX" id="8ct-9P-z1G"/>
+                        <outlet property="cityTextField" destination="Edt-R8-BSX" id="7ql-o2-nXF"/>
                         <outlet property="showWeatherButton" destination="Uz3-dg-7lX" id="ZFh-B2-MTl"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,8 @@ class CityWeatherViewController: UIViewController {
     @IBOutlet private weak var weatherImage: UIImageView!
     @IBOutlet private weak var temperatureIcon: UIImageView!
     
+    // MARK: - Private variables
+    
     private var model: City?
     
     // MARK: - LifeCycle
