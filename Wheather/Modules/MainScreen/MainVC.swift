@@ -10,21 +10,23 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var showWeatherButton: UIButton!
     @IBOutlet private weak var annotationLabel: UILabel!
     
+    // MARK: - Constants
+    
+    private let titleText = "your city"
+    private let selectedTitleColor = UIColor(red: 32/255, green: 150/255, blue: 96/255, alpha: 1.0)
+    
     // MARK: - IBActions
 
     @IBAction private func tapCityTextField(_ sender: Any) {
 
         if cityTextField.text?.isEmpty != nil {
-            cityTextField.placeholder = ""
-            cityTextField.title = StyleConstants.titleText
-            cityTextField.selectedTitleColor = StyleConstants.selectedTitleColor
+            cityTextField.title = titleText
+            cityTextField.selectedTitleColor = selectedTitleColor
         }
     
     }
     
     @IBAction private func tapShowWeatherButton(_ sender: Any) {
-        cityTextField.title = StyleConstants.titleText
-        cityTextField.selectedTitleColor = StyleConstants.selectedTitleColor
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
             showAlert(with: "Please enter city name")
             return
@@ -34,10 +36,12 @@ class MainViewController: UIViewController {
             NetworkService.getWeatherInCity(controller: self, urlString: url) { [weak self] in
                 guard let self = self, let model = $0 else { return }
                 self.showCityTemperature(with: model)
+                self.cityTextField.text = ""
             }
         } else {
             cityTextField.title = "wrong city"
             cityTextField.selectedTitleColor = .red
+            
         }
     }
     
@@ -45,7 +49,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTargets()
+        setupParameters()
     }
     
     // MARK: - Logic
@@ -68,10 +72,8 @@ class MainViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setupTargets() {
-
+    private func setupParameters() {
         cityTextField.textAlignment = .center
-        
         cityTextField.delegate = self
     }
     
