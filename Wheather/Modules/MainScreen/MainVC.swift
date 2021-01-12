@@ -49,6 +49,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupParameters()
+        setupKeyboard()
     }
     
     // MARK: - Logic
@@ -69,11 +70,20 @@ class MainViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     // MARK: - Setup
     
     private func setupParameters() {
         cityTextField.textAlignment = .center
         cityTextField.delegate = self
+    }
+    
+    private func setupKeyboard() {
+        let tappedOnView = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tappedOnView)
     }
     
 }
@@ -83,5 +93,10 @@ class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   
+      textField.resignFirstResponder()
+      return true
     }
 }
