@@ -33,16 +33,22 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y8E-1X-3Gb">
-                                <rect key="frame" x="131" y="390" width="152.5" height="60"/>
+                                <rect key="frame" x="102" y="390" width="210.5" height="60"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icTemperaturePlus" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-2W-iRl">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="8xq-1c-6W9"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUV-ih-4MQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="122" height="60"/>
+                                        <rect key="frame" x="58" y="0.0" width="122" height="60"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-u2-Hy6">
-                                        <rect key="frame" x="130" y="0.0" width="22.5" height="60"/>
+                                        <rect key="frame" x="188" y="0.0" width="22.5" height="60"/>
                                         <attributedString key="attributedText">
                                             <fragment content="°C">
                                                 <attributes>
@@ -55,28 +61,20 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="IeQ-Eb-rcG"/>
+                                    <constraint firstAttribute="height" constant="60" id="MSE-1R-bir"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icTemperaturePlus" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-2W-iRl">
-                                <rect key="frame" x="60" y="390" width="50" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="8xq-1c-6W9"/>
-                                    <constraint firstAttribute="height" constant="60" id="jZy-2B-tn2"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ff8-Ah-TMH"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" secondItem="y8E-1X-3Gb" secondAttribute="bottom" constant="82" id="2vk-lo-hJL"/>
-                            <constraint firstItem="YcU-2W-iRl" firstAttribute="top" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="68" id="AXR-Be-26b"/>
+                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" relation="lessThanOrEqual" secondItem="y8E-1X-3Gb" secondAttribute="bottom" constant="82" id="2vk-lo-hJL"/>
                             <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="bottom" constant="303" id="B5y-Hm-3bH"/>
                             <constraint firstItem="KSU-KW-qbX" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="CaD-Of-PpK"/>
                             <constraint firstItem="MVq-0E-kx8" firstAttribute="top" relation="lessThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="78" id="JvL-lo-YDV"/>
                             <constraint firstItem="MVq-0E-kx8" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="PCm-yr-IIv"/>
-                            <constraint firstItem="YcU-2W-iRl" firstAttribute="leading" secondItem="ff8-Ah-TMH" secondAttribute="leading" constant="60" id="h0D-zg-pXd"/>
-                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="top" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="68" id="pbF-sx-xyW"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="o6A-Qg-srt"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="top" relation="lessThanOrEqual" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="68" id="pbF-sx-xyW"/>
                             <constraint firstItem="y8E-1X-3Gb" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="rM6-tL-Thi"/>
                         </constraints>
                     </view>
