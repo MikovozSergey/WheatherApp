@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 import SkyFloatingLabelTextField
 
 class MainViewController: UIViewController {
@@ -17,7 +16,7 @@ class MainViewController: UIViewController {
     
     // MARK: - IBActions
 
-    @IBAction private func tapCityTextField(_ sender: Any) {
+    @IBAction private func tappedCityTextField(_ sender: Any) {
 
         if cityTextField.text?.isEmpty != nil {
             cityTextField.title = titleText
@@ -26,7 +25,7 @@ class MainViewController: UIViewController {
     
     }
     
-    @IBAction private func tapShowWeatherButton(_ sender: Any) {
+    @IBAction private func tappedShowWeatherButton(_ sender: Any) {
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
             showAlert(with: "Please enter city name")
             return

@@ -34,7 +34,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapShowWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQk-VY-BhP"/>
+                                    <action selector="tappedShowWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQk-VY-BhP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-R8-BSX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -57,7 +57,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your city"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapCityTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="NlA-lQ-kg1"/>
+                                    <action selector="tappedCityTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="NlA-lQ-kg1"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-D1-eol">
