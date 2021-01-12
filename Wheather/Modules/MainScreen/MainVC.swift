@@ -6,7 +6,7 @@ class MainViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var cityTextField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var showWeatherButton: UIButton!
+    @IBOutlet private weak var showWeatherButton: ButtonWithActivityIndicator!
     @IBOutlet private weak var annotationLabel: UILabel!
     
     // MARK: - Constants
@@ -26,18 +26,22 @@ class MainViewController: UIViewController {
     }
     
     @IBAction private func tappedShowWeatherButton(_ sender: Any) {
+        showWeatherButton.startActivityIndicator()
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
+            showWeatherButton.stopActivityIndicator()
             showAlert(with: "Please enter city name")
             return
         }
         if isValidCity(city: cityName) {
             let url = NetworkService.getURL(url: RequestConstants.url, cityName: cityName, appId: RequestConstants.appId)
             NetworkService.getWeatherInCity(controller: self, urlString: url) { [weak self] in
+                self?.showWeatherButton.stopActivityIndicator()
                 guard let self = self, let model = $0 else { return }
                 self.showCityTemperature(with: model)
                 self.cityTextField.text = ""
             }
         } else {
+            showWeatherButton.stopActivityIndicator()
             cityTextField.title = "wrong city"
             cityTextField.selectedTitleColor = .red
             
