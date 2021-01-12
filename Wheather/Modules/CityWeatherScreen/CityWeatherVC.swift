@@ -43,6 +43,8 @@ class CityWeatherViewController: UIViewController {
         
         windLabel.text = "Wind in city is equal: \n\(speedOfWind) m/c"
         
+        navigationController?.navigationBar.tintColor = UIColor.white
         navigationItem.title = model.name
+        
     }
 }

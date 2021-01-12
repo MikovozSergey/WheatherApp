@@ -89,7 +89,9 @@
                             <constraint firstItem="Edt-R8-BSX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vR7-UT-1jw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WEATHER IN CITY" id="7Fj-Sx-ekg"/>
+                    <navigationItem key="navigationItem" title="WEATHER IN CITY" id="7Fj-Sx-ekg">
+                        <barButtonItem key="backBarButtonItem" title="Back " id="xxK-eQ-UzD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="annotationLabel" destination="G35-D1-eol" id="isT-7J-Xsc"/>
                         <outlet property="cityTextField" destination="Edt-R8-BSX" id="7ql-o2-nXF"/>
