@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
             return
         }
         if isValidCity(city: cityName) {
-            let url = NetworkService.getURL(url: RequestConstants.url, cityName: cityName, appId: RequestConstants.appId)
+            let url = NetworkService.getURL(controller: self, url: RequestConstants.url, predicate: RequestConstants.predicate, cityName: cityName, appId: RequestConstants.appId, lang: RequestConstants.lang)
             NetworkService.getWeatherInCity(controller: self, urlString: url) { [weak self] in
                 self?.showWeatherButton.stopActivityIndicator()
                 guard let self = self, let model = $0 else { return }
