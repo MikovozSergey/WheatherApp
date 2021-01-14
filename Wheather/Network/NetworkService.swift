@@ -3,8 +3,10 @@ import Foundation
 
 class NetworkService {
     
-    static func getURL(controller: MainViewController, url: String, predicate: String, cityName: String, appId: String, lang: String) -> String {
+    static func getURL(controller: MainViewController, url: String, predicate: String, cityName: String, appId: String) -> String {
+        
         let spaceBetweenWords = " "
+        
         if cityName.contains(spaceBetweenWords) {
             let fullCity = cityName.components(separatedBy: " ")
             let countOfSpaces = fullCity.count - 1
@@ -14,9 +16,9 @@ class NetworkService {
             let firstPartOfCity = fullCity[0]
             let secondPartOfCity = fullCity[1]
             
-            return url + firstPartOfCity + predicate + secondPartOfCity + appId // + lang
+            return url + firstPartOfCity + predicate + secondPartOfCity + appId
         } else {
-            return url + cityName + appId // + lang
+            return url + cityName + appId
         }
     }
     
@@ -39,5 +41,5 @@ class NetworkService {
             }
         }
     }
-    
+
 }
