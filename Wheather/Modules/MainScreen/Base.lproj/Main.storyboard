@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uz3-dg-7lX">
-                                <rect key="frame" x="92.666666666666686" y="414.66666666666669" width="190" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uz3-dg-7lX" customClass="ButtonWithActivityIndicator" customModule="Wheather" customModuleProvider="target">
+                                <rect key="frame" x="92.666666666666686" y="412" width="190" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="190" id="EX8-rv-8K1"/>
@@ -34,13 +34,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapShowWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQk-VY-BhP"/>
+                                    <action selector="tappedShowWeatherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQk-VY-BhP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edt-R8-BSX" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="50" y="325.33333333333331" width="275" height="39.333333333333314"/>
+                                <rect key="frame" x="50" y="328" width="275" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,7 +57,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter your city"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapCityTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="NlA-lQ-kg1"/>
+                                    <action selector="tappedCityTextField:" destination="BYZ-38-t0r" eventType="editingChanged" id="NlA-lQ-kg1"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G35-D1-eol">
@@ -89,7 +89,9 @@
                             <constraint firstItem="Edt-R8-BSX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vR7-UT-1jw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WEATHER IN CITY" id="7Fj-Sx-ekg"/>
+                    <navigationItem key="navigationItem" title="WEATHER IN CITY" id="7Fj-Sx-ekg">
+                        <barButtonItem key="backBarButtonItem" title="Back " id="xxK-eQ-UzD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="annotationLabel" destination="G35-D1-eol" id="isT-7J-Xsc"/>
                         <outlet property="cityTextField" destination="Edt-R8-BSX" id="7ql-o2-nXF"/>
@@ -127,7 +129,7 @@
     </scenes>
     <designables>
         <designable name="Edt-R8-BSX">
-            <size key="intrinsicContentSize" width="275" height="39.220703125"/>
+            <size key="intrinsicContentSize" width="121.66666666666667" height="34"/>
         </designable>
     </designables>
     <resources>

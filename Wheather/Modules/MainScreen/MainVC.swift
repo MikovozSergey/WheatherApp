@@ -1,5 +1,4 @@
 import UIKit
-import Alamofire
 import SkyFloatingLabelTextField
 
 class MainViewController: UIViewController {
@@ -7,7 +6,7 @@ class MainViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var cityTextField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var showWeatherButton: UIButton!
+    @IBOutlet private weak var showWeatherButton: ButtonWithActivityIndicator!
     @IBOutlet private weak var annotationLabel: UILabel!
     
     // MARK: - Constants
@@ -17,7 +16,7 @@ class MainViewController: UIViewController {
     
     // MARK: - IBActions
 
-    @IBAction private func tapCityTextField(_ sender: Any) {
+    @IBAction private func tappedCityTextField(_ sender: Any) {
 
         if cityTextField.text?.isEmpty != nil {
             cityTextField.title = titleText
@@ -26,19 +25,23 @@ class MainViewController: UIViewController {
     
     }
     
-    @IBAction private func tapShowWeatherButton(_ sender: Any) {
+    @IBAction private func tappedShowWeatherButton(_ sender: Any) {
+        showWeatherButton.startActivityIndicator()
         guard let cityName = cityTextField.text, cityName.isEmpty != true else {
+            showWeatherButton.stopActivityIndicator()
             showAlert(with: "Please enter city name")
             return
         }
         if isValidCity(city: cityName) {
-            let url = NetworkService.getURL(url: RequestConstants.url, cityName: cityName, appId: RequestConstants.appId)
+            let url = NetworkService.getURL(controller: self, url: RequestConstants.url, predicate: RequestConstants.predicate, cityName: cityName, appId: RequestConstants.appId, lang: RequestConstants.lang)
             NetworkService.getWeatherInCity(controller: self, urlString: url) { [weak self] in
+                self?.showWeatherButton.stopActivityIndicator()
                 guard let self = self, let model = $0 else { return }
                 self.showCityTemperature(with: model)
                 self.cityTextField.text = ""
             }
         } else {
+            showWeatherButton.stopActivityIndicator()
             cityTextField.title = "wrong city"
             cityTextField.selectedTitleColor = .red
             
@@ -50,6 +53,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupParameters()
+        setupKeyboard()
     }
     
     // MARK: - Logic
@@ -70,11 +74,20 @@ class MainViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     // MARK: - Setup
     
     private func setupParameters() {
         cityTextField.textAlignment = .center
         cityTextField.delegate = self
+    }
+    
+    private func setupKeyboard() {
+        let tappedOnView = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tappedOnView)
     }
     
 }
@@ -84,5 +97,10 @@ class MainViewController: UIViewController {
 extension MainViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   
+      textField.resignFirstResponder()
+      return true
     }
 }

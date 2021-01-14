@@ -3,8 +3,21 @@ import Foundation
 
 class NetworkService {
     
-    static func getURL(url: String, cityName: String, appId: String) -> String {
-        return "\(url)" + cityName + "\(appId)"
+    static func getURL(controller: MainViewController, url: String, predicate: String, cityName: String, appId: String, lang: String) -> String {
+        let spaceBetweenWords = " "
+        if cityName.contains(spaceBetweenWords) {
+            let fullCity = cityName.components(separatedBy: " ")
+            let countOfSpaces = fullCity.count - 1
+            if countOfSpaces >= 2 {
+                controller.showAlert(with: "Please, write a correct city")
+            }
+            let firstPartOfCity = fullCity[0]
+            let secondPartOfCity = fullCity[1]
+            
+            return url + firstPartOfCity + predicate + secondPartOfCity + appId // + lang
+        } else {
+            return url + cityName + appId // + lang
+        }
     }
     
     static func getWeatherInCity(controller: MainViewController ,urlString: String, completion: @escaping (City?) -> Void) {
