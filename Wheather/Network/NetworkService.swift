@@ -6,9 +6,10 @@ class NetworkService {
     static func getURL(controller: MainViewController, url: String, predicate: String, cityName: String, appId: String) -> String {
         
         let spaceBetweenWords = " "
+        let hyphenBetweenWords = "-"
         
-        if cityName.contains(spaceBetweenWords) {
-            let fullCity = cityName.components(separatedBy: " ")
+        if cityName.contains(spaceBetweenWords) || cityName.contains(hyphenBetweenWords) {
+            let fullCity = cityName.components(separatedBy: [" ", "-"])
             let countOfSpaces = fullCity.count - 1
             if countOfSpaces >= 2 {
                 controller.showAlert(with: "Please, write a correct city")

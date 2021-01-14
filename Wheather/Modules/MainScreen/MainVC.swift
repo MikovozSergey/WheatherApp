@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
     
     private func transliterate(cityName: String) -> String {
         
-        let cyrillicToLatinMap: [Character : String] = [" ":" ", "А":"A", "Б":"B", "В":"V", "Г":"G",
+        let cyrillicToLatinMap: [Character : String] = [" ":" ", "-":"-", "А":"A", "Б":"B", "В":"V", "Г":"G",
                                                         "Д":"D", "Е":"E", "Ж":"Zh", "З":"Z", "И":"I",
                                                         "Й":"Y", "К":"K", "Л":"L", "М":"M", "Н":"N",
                                                         "О":"O", "П":"P", "Р":"R", "С":"S", "Т":"T",
@@ -89,8 +89,8 @@ class MainViewController: UIViewController {
         } else {
             let characters = Array(cityName)
             var wordInLatin: String = ""
-            for char in 0...characters.capacity-1 {
-                wordInLatin+=cyrillicToLatinMap[characters[char]]!
+            for char in 0...characters.capacity - 1 {
+                wordInLatin += cyrillicToLatinMap[characters[char]] ?? ""
             }
             return wordInLatin
         }
