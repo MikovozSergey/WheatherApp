@@ -7,16 +7,4 @@ extension UIViewController {
         let predicateTest = NSPredicate(format: "SELF MATCHES %@", "^(([^ ]?)(^[а-яА-ЯёЁa-zA-Z][а-яА-ЯёЁa-zA-Z- ]*[а-яА-ЯёЁa-zA-Z]$)([^ ]?))$")
         return predicateTest.evaluate(with: city)
     }
-    
-}
-
-extension String {
-    var isCyrillic: Bool {
-        let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        let lower = "abcdefghijklmnopqrstuvwxyz"
-        for char in self.map({String($0)}) where !upper.contains(char) && !lower.contains(char) {
-            return true
-        }
-        return false
-    }
 }
