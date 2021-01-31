@@ -95,7 +95,7 @@
                     <connections>
                         <outlet property="annotationLabel" destination="G35-D1-eol" id="isT-7J-Xsc"/>
                         <outlet property="cityTextField" destination="Edt-R8-BSX" id="7ql-o2-nXF"/>
-                        <outlet property="showWeatherButton" destination="Uz3-dg-7lX" id="ZFh-B2-MTl"/>
+                        <outlet property="showWeatherButton" destination="Uz3-dg-7lX" id="Aob-q4-Cnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

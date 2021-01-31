@@ -103,6 +103,7 @@
 				CE3F4F0E25A4863C003D0037 /* Network */,
 				CE4C2427258B624F0067C772 /* Resources */,
 				CE58AEFF257F6C3900EF69A4 /* Utils */,
+				CE4DC21925B2AB65002E29B8 /* Views */,
 			);
 			path = Wheather;
 			sourceTree = "<group>";
@@ -169,10 +170,17 @@
 			path = CityWeatherScreen;
 			sourceTree = "<group>";
 		};
-		CE58AEFF257F6C3900EF69A4 /* Utils */ = {
+		CE4DC21925B2AB65002E29B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CE5EA34925ADC7DD00517778 /* ButtonWithActivityIndicator.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE58AEFF257F6C3900EF69A4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
 				CE3F4F0B25A484B6003D0037 /* Constants.swift */,
 				CE58AF01257F6C8900EF69A4 /* StringExtensions.swift */,
 			);

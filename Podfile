@@ -5,6 +5,6 @@ target 'Wheather' do
   # Pods for Wheather
   pod 'Alamofire', '5.4.0'
   pod 'SwiftLint', '0.40.3'
-  pod 'SkyFloatingLabelTextField', '3.0'
+  pod 'SkyFloatingLabelTextField', '4.0'
 
 end
