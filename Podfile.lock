@@ -1,11 +1,11 @@
 PODS:
   - Alamofire (5.4.0)
-  - SkyFloatingLabelTextField (3.0.0)
+  - SkyFloatingLabelTextField (4.0.0)
   - SwiftLint (0.40.3)
 
 DEPENDENCIES:
   - Alamofire (= 5.4.0)
-  - SkyFloatingLabelTextField (= 3.0)
+  - SkyFloatingLabelTextField (= 4.0)
   - SwiftLint (= 0.40.3)
 
 SPEC REPOS:
@@ -16,9 +16,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
-  SkyFloatingLabelTextField: 35bc0c2653ad73c5fd8b7a34cfedf09c94367a1a
+  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: 20d1db92cd00b78482ab5d79d176816592d4ff1b
+PODFILE CHECKSUM: b2f5876f056a3ecc1aa30fd48ef4b370e8fbc4d0
 
 COCOAPODS: 1.10.0

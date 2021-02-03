@@ -101,15 +101,15 @@ class CityWeatherViewController: UIViewController {
 //        windLabel.center = CGPoint(x: 0 - windLabel.frame.size.width / 2, y: self.windLabel.center.y)
         self.windLabelLeadingConstraint.isActive = true
         self.temperatureStackLeadingConstraint.isActive = true
-        UIView.animate(withDuration: 3, delay: 0,  animations: {() -> Void in
+        UIView.animate(withDuration: 3, delay: 0, options: .repeat,  animations: {() -> Void in
             
             self.windLabelLeadingConstraint.isActive = false
             self.temperatureStackLeadingConstraint.isActive = false
             self.windLabelTrailingConstraint.isActive = true
             self.temperatureStackTrailingConstraint.isActive = true
             
-            self.temperatureStack.frame.origin.x += self.view.frame.width
-            self.windLabel.frame.origin.x += self.view.frame.width
+            self.temperatureStack.frame.origin.x = self.view.frame.width
+            self.windLabel.frame.origin.x = self.view.frame.width
         })
     }
 }
