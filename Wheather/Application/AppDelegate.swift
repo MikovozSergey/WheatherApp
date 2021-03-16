@@ -1,10 +1,5 @@
-//
-//  AppDelegate.swift
-//  Wheather
-//
-//  Created by User on 11/5/20.
-//
-
+import GoogleMaps
+import GooglePlaces
 import UIKit
 
 @UIApplicationMain
@@ -12,6 +7,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyCbb8J5kIRe-_AQlqBdjCXWDoTldS9IfTw")
+        GMSPlacesClient.provideAPIKey("AIzaSyCbb8J5kIRe-_AQlqBdjCXWDoTldS9IfTw")
+        
         return true
     }
 

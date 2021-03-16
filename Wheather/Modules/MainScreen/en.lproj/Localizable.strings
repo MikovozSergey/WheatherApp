@@ -1,0 +1,22 @@
+//MARK: MainVC;
+
+//MARK: Labels;
+"yourLocationCityLabel" = "You are in the city - ";
+"weatherInYourLocationCityLabel" = "Want to know the weather in it?";
+
+//MARK: TextFields;
+"titleText" = "your city";
+"textFieldPlaceholder" = "Enter your city";
+"errorTitleText" = "wrong city";
+
+//MARK: Alert Messages;
+"errorTitle" = "Error";
+"doneButton" = "done";
+"emptyCityMessage" = "Please, enter city name";
+"notAvailableWeather" = "Sorry, weather in this city is not available";
+"errorInApi" = "Something went wrong, please try again later";
+
+//MARK: CityWeatherVC:
+
+//MARK: Labels;
+"windLabelText" = "Wind in city is equal: \n%@ m/c";

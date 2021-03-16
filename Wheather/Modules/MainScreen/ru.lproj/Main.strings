@@ -1,0 +1,9 @@
+
+/* Class = "UINavigationItem"; title = "WEATHER IN CITY"; ObjectID = "7Fj-Sx-ekg"; */
+"7Fj-Sx-ekg.title" = "ПОГОДА В ГОРОДЕ";
+
+/* Class = "UIButton"; normalTitle = "SHOW WEATHER"; ObjectID = "Uz3-dg-7lX"; */
+"Uz3-dg-7lX.normalTitle" = "ПОКАЗАТЬ ПОГОДУ";
+
+/* Class = "UIBarButtonItem"; title = "Back "; ObjectID = "xxK-eQ-UzD"; */
+"xxK-eQ-UzD.title" = "Назад";
