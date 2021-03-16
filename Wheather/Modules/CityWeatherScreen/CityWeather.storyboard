@@ -11,29 +11,19 @@
         <!--City Weather View Controller-->
         <scene sceneID="jvT-qx-5N5">
             <objects>
-                <viewController storyboardIdentifier="CityWeatherViewController" id="i4E-We-fhU" customClass="CityWeatherViewController" customModule="Wheather" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DU3-pb-SlU">
+                <viewController storyboardIdentifier="CityWeatherViewController" id="i4E-We-fhU" customClass="CityWeatherViewController" customModule="Wheather" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DU3-pb-SlU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ветер со скоростью 4 м/c" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSU-KW-qbX">
-                                <rect key="frame" x="98.5" y="532" width="217.5" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="217.5" id="xED-IZ-v9N"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgSun" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-0E-kx8">
-                                <rect key="frame" x="107" y="122" width="200" height="200"/>
+                                <rect key="frame" x="107" y="114" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="5Qa-Ev-Gbb"/>
                                     <constraint firstAttribute="width" constant="200" id="GCh-JR-FUh"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="y8E-1X-3Gb">
-                                <rect key="frame" x="102" y="390" width="210.5" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="y8E-1X-3Gb">
+                                <rect key="frame" x="0.0" y="382" width="198.5" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icTemperaturePlus" translatesAutoresizingMaskIntoConstraints="NO" id="YcU-2W-iRl">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="60"/>
@@ -42,13 +32,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUV-ih-4MQ">
-                                        <rect key="frame" x="58" y="0.0" width="122" height="60"/>
+                                        <rect key="frame" x="52" y="0.0" width="122" height="60"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-u2-Hy6">
-                                        <rect key="frame" x="188" y="0.0" width="22.5" height="60"/>
+                                        <rect key="frame" x="176" y="0.0" width="22.5" height="60"/>
                                         <attributedString key="attributedText">
                                             <fragment content="°C">
                                                 <attributes>
@@ -64,31 +54,87 @@
                                     <constraint firstAttribute="height" constant="60" id="MSE-1R-bir"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-35-GWh">
+                                <rect key="frame" x="0.0" y="530" width="41.5" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="C0G-4E-xm5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbX-KG-2hc" customClass="ButtonWithActivityIndicator" customModule="Wheather" customModuleProvider="target">
+                                <rect key="frame" x="244" y="732" width="150" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="AYf-Er-GZu"/>
+                                    <constraint firstAttribute="height" constant="40" id="Tuz-Qr-8E2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="15"/>
+                                <state key="normal" title="GOOGLE MAP">
+                                    <color key="titleColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedGoogleMapButton:" destination="i4E-We-fhU" eventType="touchUpInside" id="ERI-8k-z9M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYO-q4-MOD" customClass="ButtonWithActivityIndicator" customModule="Wheather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="732" width="150" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bLU-WX-LtC"/>
+                                    <constraint firstAttribute="width" constant="150" id="vwM-eZ-akb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Regular" family="Kohinoor Gujarati" pointSize="15"/>
+                                <state key="normal" title="MK MAP">
+                                    <color key="titleColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedMapKitButton:" destination="i4E-We-fhU" eventType="touchUpInside" id="vm5-MT-sUf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ff8-Ah-TMH"/>
                         <color key="backgroundColor" red="0.41568627450000001" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="top" relation="lessThanOrEqual" secondItem="y8E-1X-3Gb" secondAttribute="bottom" constant="82" id="2vk-lo-hJL"/>
-                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="KSU-KW-qbX" secondAttribute="bottom" constant="303" id="B5y-Hm-3bH"/>
-                            <constraint firstItem="KSU-KW-qbX" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="CaD-Of-PpK"/>
-                            <constraint firstItem="MVq-0E-kx8" firstAttribute="top" relation="lessThanOrEqual" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="78" id="JvL-lo-YDV"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" secondItem="cbX-KG-2hc" secondAttribute="bottom" constant="90" id="1YY-D6-1JS"/>
+                            <constraint firstItem="qa4-35-GWh" firstAttribute="top" secondItem="y8E-1X-3Gb" secondAttribute="bottom" constant="88" id="466-WJ-1xU"/>
+                            <constraint firstItem="TYO-q4-MOD" firstAttribute="leading" secondItem="ff8-Ah-TMH" secondAttribute="leading" constant="20" id="4ag-u1-Qq8"/>
+                            <constraint firstItem="qa4-35-GWh" firstAttribute="leading" secondItem="ff8-Ah-TMH" secondAttribute="leading" id="5zl-0W-FDh"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="leading" secondItem="ff8-Ah-TMH" secondAttribute="leading" id="C5o-G9-NGj"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="top" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="68" id="F2K-rE-FLT"/>
+                            <constraint firstItem="MVq-0E-kx8" firstAttribute="top" secondItem="ff8-Ah-TMH" secondAttribute="top" constant="70" id="JvL-lo-YDV"/>
                             <constraint firstItem="MVq-0E-kx8" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="PCm-yr-IIv"/>
-                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="o6A-Qg-srt"/>
-                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="top" relation="lessThanOrEqual" secondItem="MVq-0E-kx8" secondAttribute="bottom" constant="68" id="pbF-sx-xyW"/>
-                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="centerX" secondItem="DU3-pb-SlU" secondAttribute="centerX" id="rM6-tL-Thi"/>
+                            <constraint firstItem="y8E-1X-3Gb" firstAttribute="trailing" secondItem="ff8-Ah-TMH" secondAttribute="trailing" id="q2H-4r-J1n"/>
+                            <constraint firstItem="qa4-35-GWh" firstAttribute="trailing" secondItem="ff8-Ah-TMH" secondAttribute="trailing" id="rAF-DD-NKG"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="bottom" secondItem="TYO-q4-MOD" secondAttribute="bottom" constant="90" id="rNC-f1-nIj"/>
+                            <constraint firstItem="ff8-Ah-TMH" firstAttribute="trailing" secondItem="cbX-KG-2hc" secondAttribute="trailing" constant="20" id="u4R-LV-NCk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="q2H-4r-J1n"/>
+                                <exclude reference="rAF-DD-NKG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="CJS-1a-nnp"/>
                     <connections>
+                        <outlet property="showGoogleMapButton" destination="cbX-KG-2hc" id="11k-eb-HTh"/>
+                        <outlet property="showMapKitButton" destination="TYO-q4-MOD" id="QTC-26-ShC"/>
                         <outlet property="temperatureIcon" destination="YcU-2W-iRl" id="D7b-zb-gLQ"/>
                         <outlet property="temperatureLabel" destination="HUV-ih-4MQ" id="fXS-PA-w6m"/>
+                        <outlet property="temperatureStack" destination="y8E-1X-3Gb" id="Zh5-Qq-5dD"/>
+                        <outlet property="temperatureStackLeadingConstraint" destination="C5o-G9-NGj" id="huw-6G-sQw"/>
+                        <outlet property="temperatureStackTrailingConstraint" destination="q2H-4r-J1n" id="fbW-85-tQv"/>
                         <outlet property="weatherImage" destination="MVq-0E-kx8" id="6TQ-lr-AOj"/>
-                        <outlet property="windLabel" destination="KSU-KW-qbX" id="Etq-ed-DJM"/>
+                        <outlet property="windLabel" destination="qa4-35-GWh" id="rAG-wu-5zQ"/>
+                        <outlet property="windLabelLeadingConstraint" destination="5zl-0W-FDh" id="JZH-wp-bf7"/>
+                        <outlet property="windLabelTrailingConstraint" destination="rAF-DD-NKG" id="HMg-xh-j6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEg-U9-mWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3530" y="-35"/>
+            <point key="canvasLocation" x="-3530.434782608696" y="-35.491071428571423"/>
         </scene>
     </scenes>
     <resources>
